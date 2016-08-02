@@ -6,7 +6,7 @@
 	<Style id="sn_icon">
 		<IconStyle>
 			<Icon>
-				<href>http://www.historycolorado.org/sites/default/files/images/OAHP/GE/icon.gif</href>
+				<href>https://coloradodemography.github.io/images/icon.gif</href>
 			</Icon>
 		</IconStyle>
 		<BalloonStyle>
@@ -15,7 +15,7 @@
 	
 		<tr>
   			<td width="400" height="83">
-     			  <img src="http://www.historycolorado.org/sites/default/files/images/OAHP/GE/OAHP_logo.jpg" alt="History Colorado, Office of Archaeology and Historic Preservation" width="400" height="102" border="0"/>
+     			  <img src="https://coloradodemography.github.io/images/OAHP_logo.jpg" alt="History Colorado, Office of Archaeology and Historic Preservation" width="400" height="102" border="0"/>
   			</td>
 		</tr>
 	  	<tr>

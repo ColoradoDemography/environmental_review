@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7,IE=9" /> 
+
+    <title>Environmental Review</title>
+    <link rel="icon" type="image/png" href="images/COfavicon2.png">
+    <link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/esri/css/esri.css">
+
+        <link rel="stylesheet" href="css/layout.css">
+		
+	  <!-- Make sure your CSS file is listed before jQuery -->
+<link rel="stylesheet" href="css/uniform.aristo.css" media="screen" />
+    
+    
+		<script src="js/jquery-1.9.1.js"></script>
+        <script src="js/jquery-ui.js"></script>
+<script src="js/jquery.uniform.min.js"></script>
+
+	  
+<!--[if IE]>
+<style>
+	#header{
+  border:solid 1px #999;
+  background: #E8E8E8;}
+</style>
+<![endif]-->
+
+    <link rel="stylesheet" href="css/style.css">
+	
+	<script>
+		var dojoConfig = { parseOnLoad: true };
+	</script>
+	
+<script src="https://js.arcgis.com/3.10/"></script>
+
+
+    <script src="js/envreview.js">
+    	
+    	
+    </script>
+
+    
+  </head>
+
+  <body class="claro">
+
+  <div id="mainWindow" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline'" style="width:100%; height:100%;">
+
+      <div id="header" class="shadow roundedCorners" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
+        <div id="title"></div>
+        <div id="subtitle"></div>
+
+      </div>
+      <div id="mapDiv" class="roundedCorners shadow" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'"></div>
+
+    </div>
+	
+	<div id="demo2">
+		<span>Basemap:&nbsp;</span><br />
+		<select id="speed2" >
+			<option id="y1" value="MapBoxStreets">Streets (MapBox)</option>
+			<option id="y2" value="Satellite" >Satellite (ESRI)</option>
+			<option id="y3" value="MapBoxTerrain" selected>Terrain (MapBox)</option>			
+			<option id="y4" value="TerrainMap" >Topographic (ESRI)</option>	
+			<option id="y5" value="StamenTerrain" >Terrain (Stamen)</option>				
+		</select>
+	</div>
+	  
+	<!--<div id="demo">
+		<span>Dataset:&nbsp;</span>
+		<select id="speed" onChange="handleClick();">
+			<option id="y1" value="1">Median Household Income</option>
+			<option id="y2" value="2">Median Family Income</option>
+			<option id="y3" value="3">Population 65+</option>
+			<option id="y4" value="4">Population Density</option>
+			<option id="y5" value="5">Rental Rate</option>
+			<option id="y6" value="6">Disability Rate</option>
+			<option id="y7" value="7">Mobile Housing Units</option>			
+			<option id="y8" value="8" selected>Low &amp; Moderate Income</option>
+		</select>
+	</div>-->
+	
+	<div id='chkdiv'><form>
+	<h3>Historic Properties</h3>
+	<input type="checkbox" id="chk1"><span>National Historic Registry</span><br />
+	<input type="checkbox" id="chk2"><span>National and State Register (History Colorado)</span><br />	
+	<h3>Floodplain</h3>
+	<input type="checkbox" id="chk3"><span>FEMA Floodplain</span><br />
+	<input type="checkbox" id="chk9"><span>CWCB Floodplain</span><br />
+	<h3>Rivers</h3>		
+	<input type="checkbox" id="chk4"><span>Wild and Scenic Rivers</span><br />	
+	<input type="checkbox" id="chk5"><span>Nationwide Rivers Inventory</span><br />	
+	<input type="checkbox" id="chk8"><span>1,000 Ft Buffer for Rivers</span><br />		
+	<h3>Wetlands</h3>			
+	<input type="checkbox" id="chk6"><span>National Wetlands Inventory</span><br />		
+	<h3>Critical Habitat</h3>			
+	<input type="checkbox" id="chk7"><span>Endangered Species</span><br />	
+	<h3>Airport Clear Zones</h3>			
+	<input type="checkbox" id="chk10"><span>Airports</span><br />
+	<input type="checkbox" id="chk11"><span>Airport Buffer Zones</span><br />	
+	</form>
+	</div>
+	  
+    <div id="legendDiv" style="margin-left: 12px;"></div>	
+
+	<div id="search"></div>
+
+	<!--<div id="uniform-printbtns" class="button" onmouseover="$(this).addClass('hover');"  onmouseout="$(this).removeClass('hover');"style="-moz-user-select: none;"  onclick="javascript:Clickhereformap('uniform-printbtns');"><span id='printspan'>Print Map</span></div>	-->		
+	
+	<!--<div id='link' title="Map Information"><img height="20" width="20" onclick="closeadvancedbox();" src='img/qmark.png' /></div>-->
+	
+	<div id='spotlight' class='spotlight'></div>
+	<div id="advancedbox" style="display: none;">
+
+<img id="closebtn" src="http://dola.colorado.gov/gis-cms/sites/dola.colorado.gov.gis-cms/files/projects/acsmaps/closebtn.png" onclick="$('#advancedbox').toggle();"/>
+
+<span style="font-size: 85%"><p>
+<b>National Historic Registry</b>: Downloaded from <a href="http://www.nps.gov/nr/research/data_downloads.htm">NPS</a> on 4/8/2014<br />
+<b>National and State Register (History Colorado)</b>: Aggregated from <a href="http://www.historycolorado.org/oahp/google-earth">History Colorado</a> on 4/8/2014<br /><br />
+<b>FEMA Floodplain</b>: Data downloaded from FEMA by request on 10/7/2013.  Limited Coverage of Colorado.<br />
+<b>CWCB Floodplain</b>: Created by Colorado Water Conservation Board, downloaded by request on 5/5/2014.  Represents a 100-Year Flood Plain.  Limited Coverage of Colorado.<br /><br />
+<b>Wild and Scenic Rivers</b>: digitized by Colorado State Demography Office on 5/2/2014. <br />
+<b>Nationwide Rivers Inventory</b>: Data highly modified by the Colorado State Demography Office, based on original data at: <a href="http://www.nps.gov/ncrc/programs/rtca/nri/index.html">NPS.gov</a>.  Downloaded on 4/7/2014.<br />
+<b>1,000 Ft Buffer for Rivers</b>: created by Colorado State Demography Office on 5/2/2014.  Buffers are calculated to be 1,000 feet from a river's centerline.  As a result, sites outside of the buffered area could potentially still be within 1,000 feet of the water's edge.<br /><br />
+<b>National Wetlands Inventory</b>: Data downloaded from <a href="http://www.fws.gov/wetlands/Data/State-Downloads.html">US Fish & Wildlife Service</a> on 4/10/2014.  Limited coverage of Colorado.<br /><br />
+<b>Endangered Species</b>: Downloaded from <a href="http://ecos.fws.gov/crithab/">US Fish & Wildlife Service</a> Critical Habitat Portal on 4/7/2014.<br /><br />
+<b>Airports</b>: digitized by Colorado State Demography Office on 5/15/2014, based on list of airports at the <a href="http://www.faa.gov/airports/planning_capacity/passenger_allcargo_stats/passenger/">FAA</a> as well as those listed in the <a href="http://www.faa.gov/airports/planning_capacity/npias/">National Plan of Integrated Airport Systems</a> (NPIAS). <br />
+<b>Airport Buffer Zones</b>: created by Colorado State Demography Office on 5/15/2014.  Buffers are 3,000 ft around a civil airport, or 15,000 feet around a military airfield.  Contact airport to determine if a site is in a Clear Zone (CZ) or an Accident Potential Zone (APZ).
+</p></span>	
+<span style="font-size: 70%"><p>Map Created by: <a href="http://www.colorado.gov/cs/Satellite/DOLA-Main/CBON/1251590805419" target="_blank">Colorado State Demography Office</a></p></span>			
+</div>
+
+	<div id="disclaimer" style="display: none;">
+
+<img id="closebtn2" src="http://dola.colorado.gov/gis-cms/sites/dola.colorado.gov.gis-cms/files/projects/acsmaps/closebtn.png" onclick="$('#disclaimer').toggle();"/>
+
+<span style="font-size: 100%"><p><b>Disclaimer:</b><br />These maps are to be used for general environmental review purposes only and were created to give grantees an idea of potential issues surrounding a project area.  Please refer to specific regulations (detailed on forms and instructions) for consultation requirements and proper documentation.  This map should not be considered an authoritative source of information.</p></span>			
+</div>
+
+	<div id="uniform-info" class="button" onmouseover="$(this).addClass('hover');"  onmouseout="$(this).removeClass('hover');"  onclick="$('#advancedbox').toggle();"><span id='infospan'>Information</span></div>
+	
+	<div id="uniform-disclaimer" class="button" onmouseover="$(this).addClass('hover');"  onmouseout="$(this).removeClass('hover');"  onclick="$('#disclaimer').toggle();"><span id='discspan'>Disclaimer</span></div>	
+
+	</body>
+  
+</html>

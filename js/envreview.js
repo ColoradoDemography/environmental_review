@@ -364,42 +364,42 @@ function showLocation(evt) {
 	var infoTemplate9 = new esri.InfoTemplate(getTextTitle9, getTextContent9);
 	var infoTemplate10 = new esri.InfoTemplate(getTextTitle10, getTextContent10);	
 	
-	esri.config.defaults.map.logoLink = "http://dola.colorado.gov/";
-	document.getElementsByClassName('logo-med')[0].style.backgroundImage = "url(\"http://dola.colorado.gov/gis-cms/sites/default/files/gis-images/CO_LOGO.png\")";
+	esri.config.defaults.map.logoLink = "https://demography.dola.colorado.gov/";
+	document.getElementsByClassName('logo-med')[0].style.backgroundImage = "url(\"images/CO_LOGO.png\")";
 	document.getElementsByClassName('logo-med')[0].style.backgroundRepeat = "no-repeat";
 
-	historicPoint = new esri.layers.FeatureLayer("http://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/Hist_Pt/FeatureServer/0", {
+	historicPoint = new esri.layers.FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/Hist_Pt/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
 		outFields : ["*"],
 		infoTemplate : infoTemplate1
 	});
 
-	historicPoly = new esri.layers.FeatureLayer("http://services.arcgis.com/IamIM3RJ5xHykalK/ArcGIS/rest/services/Hist_Poly/FeatureServer/0", {
+	historicPoly = new esri.layers.FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/ArcGIS/rest/services/Hist_Poly/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
 		outFields : ["*"],
 		infoTemplate : infoTemplate2
 	});
 
-	femaFloodplain = new esri.layers.FeatureLayer("http://services.arcgis.com/IamIM3RJ5xHykalK/ArcGIS/rest/services/FEMA_CO/FeatureServer/0", {
+	femaFloodplain = new esri.layers.FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/ArcGIS/rest/services/FEMA_CO/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
 		outFields : ["*"],
 		infoTemplate : infoTemplate3
 	});
 	
-	cwcbFlood = new esri.layers.FeatureLayer("http://services.arcgis.com/IamIM3RJ5xHykalK/ArcGIS/rest/services/CWCB100Yr/FeatureServer/0", {
+	cwcbFlood = new esri.layers.FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/ArcGIS/rest/services/CWCB100Yr/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
 		outFields : ["*"],
 		infoTemplate : infoTemplate8
 	});
 	
 	
-	airports = new esri.layers.FeatureLayer("http://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/All_Airports/FeatureServer/0", {
+	airports = new esri.layers.FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/All_Airports/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
 		outFields : ["*"],
 		infoTemplate : infoTemplate9
 	});
 	
-	airbuffer = new esri.layers.FeatureLayer("http://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/All_Buffer/FeatureServer/0", {
+	airbuffer = new esri.layers.FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/All_Buffer/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
 		outFields : ["*"],
 		infoTemplate : infoTemplate10
@@ -445,36 +445,36 @@ var fpJson = {
 	femaFloodplain.setRenderer(renderer3);	
 	
 
-	wildScenic = new esri.layers.FeatureLayer("http://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/CacheRev2/FeatureServer/0", {
+	wildScenic = new esri.layers.FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/CacheRev2/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
 		outFields : ["*"],
 		infoTemplate : infoTemplate4
 	});
 
-	natRivers = new esri.layers.FeatureLayer("http://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/NtnwdRivInv/FeatureServer/0", {
+	natRivers = new esri.layers.FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/NtnwdRivInv/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
 		outFields : ["*"],
 		infoTemplate : infoTemplate5
 	});
 
-	wetlandsInv = new esri.layers.FeatureLayer("http://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/CO_National_Wetlands/FeatureServer/0", {
+	wetlandsInv = new esri.layers.FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/CO_National_Wetlands/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
 		outFields : ["*"],
 		infoTemplate : infoTemplate6
 	});	
 
-	critHabitat = new esri.layers.FeatureLayer("http://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/Critical_Habitat/FeatureServer/0", {
+	critHabitat = new esri.layers.FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/Critical_Habitat/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
 		outFields : ["*"],
 		infoTemplate : infoTemplate7
 	});		
 	
-	rivBuffer = new esri.layers.FeatureLayer("http://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/RiverBuffer1000ft/FeatureServer/0", {
+	rivBuffer = new esri.layers.FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/RiverBuffer1000ft/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND
 	});		
 	
 	
-	var kmlUrl = "http://dola.colorado.gov/cms-base/sites/dola.colorado.gov.gis-cms/files/html/kml_temp/z_test2.kml";
+	var kmlUrl = "kml/z_test2.kml";
     kml = new esri.layers.KMLLayer(kmlUrl); 
     //map.addLayer(kml);
 
@@ -694,7 +694,7 @@ var uvrJson2 = {
 	historicPoint.setRenderer(renderer4);	
 	
 
-	var countyLayer = new esri.layers.FeatureLayer("http://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/County_C2010v3/FeatureServer/0", {
+	var countyLayer = new esri.layers.FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/County_C2010v3/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND
 	});
 
@@ -761,27 +761,27 @@ var uvrJson2 = {
 function addbasemap(bmName) {
 
 	if (bmName == "MapBoxTerrain") {
-		basemap = new esri.layers.WebTiledLayer("http://${subDomain}.tiles.mapbox.com/v3/statecodemog.map-392qgzze/${level}/${col}/${row}.png", {
-			"copyright" : "<a href='http://www.mapbox.com/about/maps/'>Â© Map Box and OpenStreetMap</a>",
+		basemap = new esri.layers.WebTiledLayer("https://${subDomain}.tiles.mapbox.com/v3/statecodemog.map-392qgzze/${level}/${col}/${row}.png", {
+			"copyright" : "<a href='https://www.mapbox.com/about/maps/'>Â© Map Box and OpenStreetMap</a>",
 			"id" : "MapBoxTerrain",
 			"subDomains" : ["a", "b", "c", "d"]
 		});
 	}
 
 	if (bmName == "TerrainMap") {
-		basemap = new esri.layers.ArcGISTiledMapServiceLayer("http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer");
+		basemap = new esri.layers.ArcGISTiledMapServiceLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer");
 	}
 
 	if (bmName == "MapBoxStreets") {
-		basemap = new esri.layers.WebTiledLayer("http://${subDomain}.tiles.mapbox.com/v3/statecodemog.map-i4mhpeb3/${level}/${col}/${row}.png", {
-			"copyright" : "<a href='http://www.mapbox.com/about/maps/'>Â© Map Box and OpenStreetMap</a>",
+		basemap = new esri.layers.WebTiledLayer("https://${subDomain}.tiles.mapbox.com/v3/statecodemog.map-i4mhpeb3/${level}/${col}/${row}.png", {
+			"copyright" : "<a href='https://www.mapbox.com/about/maps/'>Â© Map Box and OpenStreetMap</a>",
 			"id" : "MapBoxStreets",
 			"subDomains" : ["a", "b", "c", "d"]
 		});
 	}
 
 	if (bmName == "StamenTerrain") {
-		basemap = new esri.layers.WebTiledLayer("http://${subDomain}.tile.stamen.com/terrain/${level}/${col}/${row}.png", {
+		basemap = new esri.layers.WebTiledLayer("https://${subDomain}.tile.stamen.com/terrain/${level}/${col}/${row}.png", {
 			"copyright" : "Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under CC BY SA",
 			"id" : "StamenTerrain",
 			"subDomains" : ["a", "b", "c", "d"]
@@ -789,7 +789,7 @@ function addbasemap(bmName) {
 	}
 
 	if (bmName == "Satellite") {
-		basemap = new esri.layers.ArcGISTiledMapServiceLayer("http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer");
+		basemap = new esri.layers.ArcGISTiledMapServiceLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer");
 	}
 
 	map.addLayer(basemap);
@@ -802,27 +802,27 @@ map.removeLayer(basemap);
 bmName = $('#speed2').val();
 
 	if (bmName == "MapBoxTerrain") {
-		basemap = new esri.layers.WebTiledLayer("http://${subDomain}.tiles.mapbox.com/v3/statecodemog.map-392qgzze/${level}/${col}/${row}.png", {
-			"copyright" : "<a href='http://www.mapbox.com/about/maps/'>Â© Map Box and OpenStreetMap</a>",
+		basemap = new esri.layers.WebTiledLayer("https://${subDomain}.tiles.mapbox.com/v3/statecodemog.map-392qgzze/${level}/${col}/${row}.png", {
+			"copyright" : "<a href='https://www.mapbox.com/about/maps/'>Â© Map Box and OpenStreetMap</a>",
 			"id" : "MapBoxTerrain",
 			"subDomains" : ["a", "b", "c", "d"]
 		});
 	}
 
 	if (bmName == "TerrainMap") {
-		basemap = new esri.layers.ArcGISTiledMapServiceLayer("http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer");
+		basemap = new esri.layers.ArcGISTiledMapServiceLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer");
 	}
 
 	if (bmName == "MapBoxStreets") {
-		basemap = new esri.layers.WebTiledLayer("http://${subDomain}.tiles.mapbox.com/v3/statecodemog.map-i4mhpeb3/${level}/${col}/${row}.png", {
-			"copyright" : "<a href='http://www.mapbox.com/about/maps/'>Â© Map Box and OpenStreetMap</a>",
+		basemap = new esri.layers.WebTiledLayer("https://${subDomain}.tiles.mapbox.com/v3/statecodemog.map-i4mhpeb3/${level}/${col}/${row}.png", {
+			"copyright" : "<a href='https://www.mapbox.com/about/maps/'>Â© Map Box and OpenStreetMap</a>",
 			"id" : "MapBoxStreets",
 			"subDomains" : ["a", "b", "c", "d"]
 		});
 	}
 
 	if (bmName == "StamenTerrain") {
-		basemap = new esri.layers.WebTiledLayer("http://${subDomain}.tile.stamen.com/terrain/${level}/${col}/${row}.png", {
+		basemap = new esri.layers.WebTiledLayer("https://${subDomain}.tile.stamen.com/terrain/${level}/${col}/${row}.png", {
 			"copyright" : "Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under CC BY SA",
 			"id" : "StamenTerrain",
 			"subDomains" : ["a", "b", "c", "d"]
@@ -830,7 +830,7 @@ bmName = $('#speed2').val();
 	}
 
 	if (bmName == "Satellite") {
-		basemap = new esri.layers.ArcGISTiledMapServiceLayer("http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer");
+		basemap = new esri.layers.ArcGISTiledMapServiceLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer");
 	}
 
 	map.addLayer(basemap);             

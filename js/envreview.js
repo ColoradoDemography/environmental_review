@@ -364,7 +364,7 @@ function showLocation(evt) {
 	var infoTemplate9 = new esri.InfoTemplate(getTextTitle9, getTextContent9);
 	var infoTemplate10 = new esri.InfoTemplate(getTextTitle10, getTextContent10);	
 	
-	esri.config.defaults.map.logoLink = "https://demography.dola.colorado.gov/";
+	esri.config.defaults.map.logoLink = "https://dola.colorado.gov/";
 	document.getElementsByClassName('logo-med')[0].style.backgroundImage = "url(\"images/CO_LOGO.png\")";
 	document.getElementsByClassName('logo-med')[0].style.backgroundRepeat = "no-repeat";
 
@@ -474,7 +474,7 @@ var fpJson = {
 	});		
 	
 	
-	var kmlUrl = "kml/z_test2.kml";
+	var kmlUrl = "http://dola.colorado.gov/cms-base/sites/dola.colorado.gov.gis-cms/files/html/kml_temp/z_test2.kml";
     kml = new esri.layers.KMLLayer(kmlUrl); 
     //map.addLayer(kml);
 
@@ -821,13 +821,6 @@ bmName = $('#speed2').val();
 		});
 	}
 
-	if (bmName == "StamenTerrain") {
-		basemap = new esri.layers.WebTiledLayer("https://${subDomain}.tile.stamen.com/terrain/${level}/${col}/${row}.png", {
-			"copyright" : "Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under CC BY SA",
-			"id" : "StamenTerrain",
-			"subDomains" : ["a", "b", "c", "d"]
-		});
-	}
 
 	if (bmName == "Satellite") {
 		basemap = new esri.layers.ArcGISTiledMapServiceLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer");
